@@ -1,0 +1,16 @@
+<h1><%= @place.name %></h1>
+
+<% if @activities.any? %>
+  <h2>Activities:</h2>
+  <ul>
+    <% @activities.each do |activity| %>
+      <li>
+        <strong><%= activity.name %></strong><br>
+        <%= activity.description %><br>
+        Date Posted: <%= activity.date_posted %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No activities found for this place.</p>
+<% end %>

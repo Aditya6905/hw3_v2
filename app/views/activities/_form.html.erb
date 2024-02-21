@@ -1,0 +1,22 @@
+<%= form_with(model: place || activity, local: true) do |form| %>
+  <% if place %>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  <% end %>
+
+  <% if activity %>
+    <%= form.hidden_field :place_id, value: place.id %>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  <% end %>
+
+  <% if activity %>
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  
+    <%= form.label :date_posted %>
+    <%= form.date_field :date_posted %>
+  <% end %>
+
+  <%= form.submit %>
+<% end %>
