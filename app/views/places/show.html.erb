@@ -1,7 +1,7 @@
 <h1><%= @place.name %></h1>
 
 <% if @activities.any? %>
-  <h2>Activities:</h2>
+  <h2>Post(s):</h2>
   <ul>
     <% @activities.each do |activity| %>
       <li>
@@ -12,7 +12,9 @@
     <% end %>
   </ul>
 <% else %>
-  <p>No activities found for this place.</p>
+  <p>No post found for this place.</p>
 <% end %>
 
-<%= link_to 'New Activity', new_place_activity_path(@place) %>
+<%= link_to 'New Post', new_place_activity_path(@place) %> </p>
+
+<%= link_to 'Back', places_path %>
