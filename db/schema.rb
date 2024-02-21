@@ -21,7 +21,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_21_130006) do
     t.index ["place_id"], name: "index_activities_on_place_id"
   end
 
-  create_table "activities", force: :cascade do |t|
+  create_table "entries", force: :cascade do |t|
     t.string "title"
     t.text "description"
     t.date "posted_on"

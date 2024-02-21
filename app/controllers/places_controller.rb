@@ -10,6 +10,7 @@ class PlacesController < ApplicationController
 
   def new
     @place = Place.new
+    @activity = @place.activities.build
   end
 
   def create
@@ -24,6 +25,6 @@ class PlacesController < ApplicationController
   private
 
   def place_params
-    params.require(:place).permit(:name)
+    params.require(:place).permit(:name, activities_attributes: [:name, :description, :date_posted])
   end
 end
